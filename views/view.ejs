@@ -1,0 +1,21 @@
+<%- include ('partials/header.ejs') %>
+
+
+<div class="container myBorder">
+
+	<h2 class="text-center"><%=article.title%></h2>
+	<hr style="border-top: 2px solid rgb(58, 51, 51)"">
+
+	<img src=" <%=article.img%>">
+	<h4 class="text-center"><%=article.description%></h4>
+	<br>
+	<p><%-article.body%></p>
+	<br>
+	<h6 class="text-right"> <%=article.created%> </h6>
+
+</div>
+
+
+
+
+<%- include ('partials/footer.ejs') %>

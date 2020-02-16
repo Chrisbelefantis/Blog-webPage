@@ -1,0 +1,69 @@
+<%- include ('partials/header.ejs') %>
+
+<div class="container text-center">
+
+	<% articles.forEach((article)=>{ %>
+
+	<div style="position: relative;">
+
+		<h2><%=article.title%></h2>
+		<img class="trashcan" src="/images/trashcan.jpg">
+		<img class="myImg" src=" <%=article.img %>">
+		<h5><%= article.description %></h5>
+
+
+		<form id="inline" action="/posts/<%=article._id%>" method="get">
+
+			<button class="btn btn-primary">View Posts</button>
+
+		</form>
+
+		<form id="inline" action="/posts/<%=article._id%>/edit" method="get">
+
+			<button class="btn btn-primary">Edit Post</button>
+
+		</form>
+		<form action="/posts/<%=article._id%>/?_method=DELETE" method="post">
+
+			<button style="visibility: hidden" class="btn btn-primary delete" disabled>Delete Post</button>
+
+		</form>
+
+		<hr>
+
+	</div>
+
+	<% }) %>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+	var deleteButton = document.querySelectorAll(".delete");
+	var trashcan = document.querySelectorAll(".trashcan");
+
+
+
+
+	for (let i = 0; i < trashcan.length; i++) {
+
+
+
+		trashcan[i].addEventListener("click", function () {
+
+			deleteButton[i].disabled = false;
+			deleteButton[i].click();
+
+		});
+
+
+
+	}
+
+
+
+</script>
+
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,61 @@
+img{
+
+    width: 500px; 
+    height: 250px;
+    margin:  25px auto;
+    border-radius: 25px;
+    object-fit: cover;
+    display: block;
+    text-align: center;
+
+
+
+}
+
+#myColor{
+
+	color: white;
+	background-color: #282828;
+
+}
+
+
+.myBorder{
+
+	border:8px outset  rgb(58, 51, 51);
+	border-radius: 8px;
+	padding: 10px 100px 100px 100px;
+}
+
+
+
+.heading{
+
+	font-size: 4em;
+
+}
+
+.trashcan{
+
+  margin: 0% 0% 0% 0% ;
+  width: 25px;
+  height: 25px;
+  position:absolute;
+  top:0;
+  right:0;
+  z-index: 0;
+
+
+}
+
+.trashcan:hover{
+  
+  cursor: pointer;
+
+}
+
+#inline{
+
+  display: inline;
+
+}

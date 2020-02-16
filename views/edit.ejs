@@ -1,0 +1,48 @@
+<%- include ('partials/header.ejs') %>
+
+
+<div class="container">
+    <div class="panel panel-default">
+
+        <div class="panel-heading text-center" id="myColor">
+
+            <h1>Edit the Article </h1>
+
+            <h6>Please fill all the required fields</h6>
+
+        </div>
+
+        <form action="/posts/<%=article._id%>?_method=PUT" method="POST">
+
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input type="text" class="form-control text-left" name="blog[title]" value="<%=article.title%>"
+                            id="Title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" name="blog[description]"
+                            value="<%=article.description%>" id="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Place your article here</label>
+
+                        <textarea class="form-control" name="blog[body]" id="body" rows="3"
+                            required><%=article.body%></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="text" class="form-control" name="blog[image]" id="image" value="<%=article.img%>"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>
